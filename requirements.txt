@@ -1,0 +1,4 @@
+requests>=2.20
+PyYAML>=6.0
+tqdm>=4.60
+PyPDF2>=3.0

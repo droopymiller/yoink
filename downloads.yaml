@@ -1,0 +1,25 @@
+version: 1
+
+downloads:
+  parts:
+    folder: "Data Sheets"
+    base_url: "https://www.ti.com/lit/gpn/"
+    filename_mode: "item"
+    items:
+      - TPS7A02
+      - LM358
+
+  app_notes:
+    folder: "Application Notes"
+    base_url: "https://www.ti.com/lit/pdf/"
+    filename_mode: "title"
+    items:
+      - snva729
+      - slva732
+
+  evm_guides:
+    folder: "EVM Users Guides"
+    base_url: "https://www.ti.com/lit/pdf/"
+    filename_mode: "title"
+    items:
+      - slvu551
