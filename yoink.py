@@ -220,10 +220,16 @@ def main():
     Entry point for the script. Parses arguments, loads config,
     validates schema, and coordinates document downloads.
     """
-    parser = argparse.ArgumentParser(description="Download categorized documents from TI.")
+    parser = argparse.ArgumentParser(description="Download categorized documents.")
+    parser.add_argument("workdir", help="Path to working directory for document downloads.")
     parser.add_argument('--input', type=str, default='downloads.yaml', help='YAML config file (default: downloads.yaml)')
     parser.add_argument('--threads', type=int, default=4, help='Max concurrent downloads (default: 4)')
     args = parser.parse_args()
+
+    if not os.path.isdir(args.workdir):
+        raise FileNotFoundError(f"The working directory '{args.workdir}' does not exist.")
+    
+    os.chdir(args.workdir)
 
     raw_config = load_downloads_config(args.input)
     validate_config(raw_config)
