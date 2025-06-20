@@ -21,7 +21,7 @@ def generate_index(pdf_dir: str):
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PDF Index</title>
+  <title>{os.path.basename(pdf_dir)}</title>
   <style>
     body {{ font-family: sans-serif; margin: 2em; }}
     input[type="text"] {{ width: 300px; padding: 8px; margin-bottom: 20px; }}
